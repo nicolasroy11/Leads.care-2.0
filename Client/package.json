@@ -1,7 +1,9 @@
 {
-  "name": "leads-app",
-  "version": "0.0.0",
-  "license": "MIT",
+  "name": "leads-client",
+  "version": "2.0.0",
+  "description": "Client for leads.care",
+  "license": "UNLICENSED",
+  "main": "Main.js",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
