@@ -1,0 +1,11 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    // This is the build function for the server exclusively; the client uses Angular-CLI to build
+    "version": "0.1.0",
+    "command": "node",
+    "isShellCommand": true,
+    "args": ["${workspaceRoot}/Server/node_modules/typescript/bin/tsc", "-p", "Server"],
+    "showOutput": "silent",
+    "problemMatcher": "$tsc"
+}
