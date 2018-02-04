@@ -1,0 +1,40 @@
+.orange-block-container {
+    background-color: #FCE181;
+    -webkit-transition: background-color 1s;
+    transition: background-color 1s;
+}
+
+.orange-block-container:hover {
+    background-color: #FCD191;
+}
+
+.expansion-panel-header {
+    height: 50px;
+    width: 100%;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.expansion-panel-header div{
+    float: left;
+}
+
+.collapsed-detail {
+    padding-left: 30px;
+    display: flex;
+    flex-direction: column;
+    line-height: 30pt;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.field-header {
+    font-size: 10pt;
+    font-weight: bold;
+    color: #020202;
+    display:inline;
+    font-family: 'Quicksand', sans-serif;
+}
+
+button {
+    color: #026670;
+    height: 50px;
+}

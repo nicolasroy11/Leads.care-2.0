@@ -1,0 +1,26 @@
+{
+  "name": "leads",
+  "version": "2.0.0",
+  "description": "Leads app, Dockerized for production deployment",
+  "main": "Gulpfile.js",
+  "scripts": {
+    "start-local-mongo": "sudo ~/mongodb/bin/mongod",
+    "dev-start-client": "cd Client && ng serve",
+    "dev-start-server": "cd Server && nodemon --inspect=12345 Main.js",
+    "dev-start-all": "npm-run-all -p start-local-mongo dev-start-client dev-start-server",
+    "prod-docker-pre-process": "cd Client && npm run build --prod && cd .. && cd Server && npm run copy-shared && cd ..",
+    "prod-compose": "docker-compose -f docker-compose.yml up -d --build",
+    "debug-compose": "docker-compose -f docker-compose.debug.yml up -d --build",
+    "prod-docker-post-process": "cd Server && npm run delete-shared",
+    "prod-docker-start-all": "npm-run-all -s prod-docker-pre-process debug-compose prod-docker-post-process"
+  },
+  "author": "Pixel Mocha",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.14.12",
+    "npm-run-all": "^4.1.2"
+  },
+  "dependencies": {
+    "mongoose": "^5.0.3"
+  }
+}
