@@ -4,6 +4,7 @@
   "description": "Leads app, Dockerized for production deployment",
   "main": "",
   "scripts": {
+    "server-tsc": "cd Server && node_modules/typescript/bin/tsc -p .",
     "init": "npm install && cd Server && npm install && cd .. && cd Client && npm install",
     "start-local-mongo": "sudo ~/mongodb/bin/mongod --fork --logpath /usr/local/var/log/mongodb/mongo.log",
     "stop-local-mongo": "sudo ~/mongodb/bin/mongo localhost/admin --eval 'db.shutdownServer()'",
@@ -25,7 +26,6 @@
     "npm-run-all": "^4.1.2"
   },
   "dependencies": {
-    "mongoose": "^5.0.3",
-    "typescript": "^2.7.1"
+    "mongoose": "^5.0.3"
   }
 }

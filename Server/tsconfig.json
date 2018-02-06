@@ -17,16 +17,12 @@
 
     "sourceMap": true,
     "suppressImplicitAnyIndexErrors": true,
-    "target": "es5",
-    "paths": {
-      "./Shared/*": [
-        "Shared"
-      ]
-    }
+    "target": "es5"
   },
   "exclude": [
-    "node_modules/*",
-    "Client/node_modules/*",
-    "Client/**/*"
+    "node_modules/*"
+  ],
+  "include": [
+    "../Shared"
   ]
 }

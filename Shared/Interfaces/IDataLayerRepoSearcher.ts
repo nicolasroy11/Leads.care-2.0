@@ -1,6 +1,4 @@
-import { ISearchResultModel } from '../Models/ISearchResultModel';
-import { PaginatedSearchResultModel } from '../Models/PaginatedSearchResultModel';
-
 export interface IDataLayerRepoSearcher<TModel, TSearchCriteria, TSearchResult> {
+    Get(leadId: number): Promise<TModel>
     Search(searchCriteria: TSearchCriteria): Promise<TSearchResult>;
 }
