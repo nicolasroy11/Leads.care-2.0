@@ -6,7 +6,7 @@
   "main": "Main.js",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "dev-start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
