@@ -11,7 +11,7 @@
     "dev-start-client": "cd Client && ng serve",
     "dev-start-server": "cd Server && nodemon --inspect=12345 Main.js",
     "dev-start-all": "npm run start-local-mongo && npm-run-all -p dev-start-client dev-start-server",
-    "docker-pre-process": "cd Client && npm run build --prod && cd .. && cd Server && npm run copy-shared && cd ..",
+    "docker-pre-process": "cd Client && ng build --prod && cd .. && cd Server && node_modules/typescript/bin/tsc -p . && npm run copy-shared && cd ..",
     "docker-post-process": "cd Server && npm run delete-shared",
     "dev-compose": "docker-compose -f docker-compose.debug.yml up -d --build",
     "dev-docker-start-all": "npm-run-all -s start-local-mongo docker-pre-process dev-compose docker-post-process",
