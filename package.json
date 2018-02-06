@@ -5,23 +5,17 @@
   "main": "",
   "scripts": {
     "init": "npm install && cd Server && npm install && cd .. && cd Client && npm install",
-
     "start-local-mongo": "sudo ~/mongodb/bin/mongod --fork --logpath /usr/local/var/log/mongodb/mongo.log",
     "stop-local-mongo": "sudo ~/mongodb/bin/mongo localhost/admin --eval 'db.shutdownServer()'",
-
     "dev-start-client": "cd Client && ng serve",
     "dev-start-server": "cd Server && nodemon --inspect=12345 Main.js",
     "dev-start-all": "npm run start-local-mongo && npm-run-all -p dev-start-client dev-start-server",
-
     "docker-pre-process": "cd Client && npm run build --prod && cd .. && cd Server && npm run copy-shared && cd ..",
     "docker-post-process": "cd Server && npm run delete-shared",
-
     "dev-compose": "docker-compose -f docker-compose.debug.yml up -d --build",
     "dev-docker-start-all": "npm-run-all -s start-local-mongo docker-pre-process dev-compose docker-post-process",
-
     "prod-compose": "docker-compose -f docker-compose.yml up -d --build",
     "prod-docker-start-all": "npm-run-all -s docker-pre-process prod-compose docker-post-process",
-
     "docker-kill-all": "docker-compose down && docker rmi $(docker images -q) && npm run stop-local-mongo"
   },
   "author": "Pixel Mocha",
@@ -31,6 +25,7 @@
     "npm-run-all": "^4.1.2"
   },
   "dependencies": {
-    "mongoose": "^5.0.3"
+    "mongoose": "^5.0.3",
+    "typescript": "^2.7.1"
   }
 }
