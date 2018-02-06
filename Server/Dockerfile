@@ -13,6 +13,7 @@ COPY Shared /usr/src/Shared
 
 # Install dependencies
 RUN npm install
+RUN npm run tsc
 
 # Expose the port the app runs in
 EXPOSE 3000

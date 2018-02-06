@@ -5,6 +5,7 @@
   "main": "Main.js",
   "scripts": {
     "start": "node Main",
+    "tsc": "node_modules/typescript/bin/tsc -p .",
     "copy-shared": "mkdir Shared && cp -r ../Shared/* ./Shared",
     "delete-shared": "rm -r ./Shared",
     "docker": "docker",

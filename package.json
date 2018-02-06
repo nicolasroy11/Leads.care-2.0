@@ -5,7 +5,7 @@
   "main": "",
   "scripts": {
     "server-tsc": "cd Server && node_modules/typescript/bin/tsc -p .",
-    "init": "npm install && cd Server && npm install && cd .. && cd Client && npm install",
+    "npm-install-all": "npm install && cd Server && npm install && cd .. && cd Client && npm install",
     "start-local-mongo": "sudo ~/mongodb/bin/mongod --fork --logpath /usr/local/var/log/mongodb/mongo.log",
     "stop-local-mongo": "sudo ~/mongodb/bin/mongo localhost/admin --eval 'db.shutdownServer()'",
     "dev-start-client": "cd Client && ng serve",
