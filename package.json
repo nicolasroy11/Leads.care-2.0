@@ -11,7 +11,7 @@
 
     "dev-start-client": "cd Client && ng serve",
     "dev-start-server": "cd Server && nodemon --inspect=12345 Main.js",
-    "dev-start-all": "npm-run-all -p start-local-mongo dev-start-client dev-start-server",
+    "dev-start-all": "npm run start-local-mongo && npm-run-all -p dev-start-client dev-start-server",
 
     "docker-pre-process": "cd Client && npm run build --prod && cd .. && cd Server && npm run copy-shared && cd ..",
     "docker-post-process": "cd Server && npm run delete-shared",
