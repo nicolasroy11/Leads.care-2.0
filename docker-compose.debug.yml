@@ -1,12 +1,10 @@
-# specify docker-compose version
 version: '2'
 
-# Define the services/containers to be run
 services:
-  client: # name of the service
-    build: Client # specify the directory of the Dockerfile
+  client:
+    build: Client
     ports:
-      - "4200:4200" # specify port forwarding
+      - "4200:4200"
 
   server:
     build: Server
