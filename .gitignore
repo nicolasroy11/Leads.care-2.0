@@ -1,7 +1,11 @@
-# Server
+# Top level
 node_modules
 **.js
 **.js.map
+!Client/Main.js
+
+# Server
+node_modules
 
 # Client
 # compiled output
