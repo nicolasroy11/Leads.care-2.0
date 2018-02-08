@@ -12,7 +12,6 @@ WORKDIR /usr/src/app
 
 # We are only copying the dist folder
 COPY package.json /usr/src/app
-COPY package-lock.json /usr/src/app
 COPY Main.js /usr/src/app
 COPY dist /usr/src/app/dist
 
