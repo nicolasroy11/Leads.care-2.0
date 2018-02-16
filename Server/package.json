@@ -20,8 +20,8 @@
     "docker-rmi": "docker rmi node-image",
     "docker-clean": "npm run docker-stop && npm run docker-rm && npm run docker-rmi",
 
-    "docker-tag-for-deploy": "docker tag leads_care:server_$(npm get semver) $(npm get ecr_uri)/leads_care:server_latest & docker tag leads_care:server_$(npm get semver) $(npm get ecr_uri)/leads_care:server_$(npm get semver)",
-    "docker-push-aws": "docker push $(npm get ecr_uri)/leads_care:server_latest & docker push $(npm get ecr_uri)/leads_care:server_$(npm get semver)",
+    "docker-tag-for-deploy": "docker tag leads_care:server_$(npm get semver) $(npm get ecr_uri)/leads_care:server_latest",
+    "docker-push-aws": "docker push $(npm get ecr_uri)/leads_care:server_latest",
     "docker-deploy-aws": "npm run docker-build && npm run docker-tag-for-deploy && npm run docker-push-aws",
     "test1": "echo $(npm get ecr_uri)/leads_care:server_$(npm get semver)"
   },

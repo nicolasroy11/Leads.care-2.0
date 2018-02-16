@@ -21,7 +21,7 @@
     "docker-build-all": "cd Server && npm run docker-build && cd .. && cd Client && npm run docker-build",
     "docker-deploy-client": "cd Client && npm run docker-deploy-aws",
     "docker-deploy-server": "cd Server && npm run docker-deploy-aws",
-    "docker-deploy-all-aws": "npm-run-all -p docker-deploy-server docker-deploy-client"
+    "docker-deploy-all-aws": "npm-run-all -s docker-deploy-server docker-deploy-client"
   },
   "author": "Pixel Mocha",
   "license": "UNLICENSED",
