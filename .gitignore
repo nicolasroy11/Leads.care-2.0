@@ -8,6 +8,7 @@ node_modules
 node_modules
 Server/Repositories.Mock
 Server/appSettings.json
+Server/.npmrc
 
 # Client
 # compiled output
