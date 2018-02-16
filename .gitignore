@@ -7,6 +7,7 @@ node_modules
 # Server
 node_modules
 Server/Repositories.Mock
+Server/appSettings.json
 
 # Client
 # compiled output
@@ -14,6 +15,7 @@ Client/dist
 Client/tmp
 Client/out-tsc
 Client/dist
+Client/.npmrc
 
 # dependencies
 Client/node_modules

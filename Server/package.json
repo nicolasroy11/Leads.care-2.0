@@ -3,6 +3,9 @@
   "version": "2.0.0",
   "description": "Server for leads.care",
   "main": "Main.js",
+  "config": {
+    "tag": "leads_care:server_0.1.0"
+  },
   "scripts": {
     "start": "node Main",
     "start-local-mongo": "sudo ~/mongodb/bin/mongod --fork --logpath /usr/local/var/log/mongodb/mongo.log",
@@ -12,7 +15,7 @@
     "copy-shared": "mkdir Shared && cp -r ../Shared/* ./Shared",
     "delete-shared": "rm -r ./Shared",
     "docker": "docker",
-    "docker-build": "npm run copy-shared && docker build -t node-image . && npm run delete-shared",
+    "docker-build": "npm run copy-shared && docker build -t $npm_package_config_tag  . && npm run delete-shared",
     "docker-run": "docker run -d --name node-c -p 3000:3000 node-image",
     "docker-br": "npm run docker-build && npm run docker-run",
     "docker-stop": "docker stop node-c",

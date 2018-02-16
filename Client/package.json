@@ -1,17 +1,26 @@
 {
   "name": "leads-client",
-  "version": "2.0.0",
+  "version": "0.1.0",
   "description": "Client for leads.care",
   "license": "UNLICENSED",
   "main": "Main.js",
+  "config": {
+    "local_image": "leads_care:client_latest"
+  },
   "scripts": {
     "ng": "ng",
+    "docker": "docker",
     "dev-start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "serve-dist": "node Main"
+    "serve-dist": "node Main",
+    "pre-docker-build": "ng build --prod",
+    "docker-build": "npm run pre-docker-build && docker build -t $npm_package_config_local_image .",
+    "docker-tag-for-deploy": "docker tag $npm_package_config_local_image $(npm get ecr_uri)/leads_care:client_latest & docker tag $npm_package_config_local_image $(npm get ecr_uri)/leads_care:client_latest",
+    "docker-deploy-all-aws": "docker push $(npm get ecr_uri)/leads_care:client_latest & docker push $(npm get ecr_uri)/leads_care:client_latest",
+    "test1": "echo $(npm get ecr_uri)"
   },
   "private": true,
   "dependencies": {

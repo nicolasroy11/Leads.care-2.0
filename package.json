@@ -1,6 +1,6 @@
 {
   "name": "leads",
-  "version": "2.0.0",
+  "version": "0.1.0",
   "description": "Leads app, Dockerized for production deployment",
   "main": "",
   "scripts": {
@@ -17,7 +17,10 @@
     "dev-docker-start-all": "npm-run-all -s start-local-mongo docker-pre-process dev-compose docker-post-process",
     "prod-compose": "docker-compose -f docker-compose.yml up -d --build",
     "prod-docker-start-all": "npm-run-all -s docker-pre-process prod-compose docker-post-process",
-    "docker-kill-all": "docker-compose down && docker rmi $(docker images -q) && npm run stop-local-mongo"
+    "docker-kill-all": "docker-compose down && docker rmi $(docker images -q) && npm run stop-local-mongo",
+    "docker-build-all": "cd Server && npm run docker-build && cd .. && cd Client && npm run docker-build",
+    "docker-tag-all-for-deploy": "docker tag leads_care:client_latest 420402905270.dkr.ecr.us-east-1.amazonaws.com/leads_care:client_latest & docker tag leads_care:server_latest 420402905270.dkr.ecr.us-east-1.amazonaws.com/leads_care:server_latest",
+    "docker-deploy-all-aws": "docker push 420402905270.dkr.ecr.us-east-1.amazonaws.com/leads_care:client_latest & docker push 420402905270.dkr.ecr.us-east-1.amazonaws.com/leads_care:server_latest"
   },
   "author": "Pixel Mocha",
   "license": "UNLICENSED",
