@@ -11,7 +11,6 @@ Server/appSettings.json
 Server/.npmrc
 
 # Client
-# compiled output
 Client/dist
 Client/tmp
 Client/out-tsc
