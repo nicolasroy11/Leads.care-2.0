@@ -7,8 +7,6 @@ import { environment } from '../../../environments/environment';
 
 @Injectable()
 export class AppSettingsService {
-    // private url: string = environment.baseApiUrl;
-    // private _apiUrl = 'http://localhost:3000/api/' + 'AppSettings';
     private _apiUrl = `${environment.baseApiUrl}/AppSettings`;
     public constructor(private _httpClient: HttpClient, public appSettings: AppSettings) { }
 

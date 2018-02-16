@@ -10,7 +10,7 @@
     "stop-local-mongo": "sudo ~/mongodb/bin/mongo localhost/admin --eval 'db.shutdownServer()'",
     "dev-start-client": "cd Client && npm run dev-start",
     "dev-start-server": "cd Server && npm run dev-start",
-    "dev-start-all": "npm-run-all -p dev-start-client dev-start-server",
+    "dev-start-all": "npm run stop-local-mongo && npm-run-all -p dev-start-client dev-start-server",
     "docker-pre-process": "cd Client && ng build --prod && cd .. && cd Server && node_modules/typescript/bin/tsc -p . && npm run copy-shared && cd ..",
     "docker-post-process": "cd Server && npm run delete-shared",
     "dev-compose": "docker-compose -f docker-compose.debug.yml up -d --build",
