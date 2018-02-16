@@ -1,6 +1,6 @@
 ﻿import { Injectable } from '@angular/core';
 import { Registry } from '../../../../../Shared/Types/Registry';
-// import { EnvironmentSettings } from './EnvironmentSettings';
+// import { EnvironmentSettings } from './environment-settings';
 
 @Injectable()
 export class AppSettings extends Registry {

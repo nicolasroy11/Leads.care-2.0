@@ -27,8 +27,8 @@ application.use((req, res) => {
     }
 });
 
-// application.get('/', function (req, res) {
-//     res.send('hello leads!');
-// });
+application.get('/', function (req, res) {
+    res.send('leads.care app reachable at 3000');
+});
 
 application.listen(3000);

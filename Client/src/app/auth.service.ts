@@ -3,10 +3,12 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 // import { AppSettings } from './framework-components/Settings/AppSettings';
 import { UserBaseRequestModel } from '../../../Shared/Models/UserBaseRequestModel';
+import { environment } from '../environments/environment';
 
 @Injectable()
 export class AuthService {
-    private EndpointBaseUrl = 'http://localhost:3000/api/' + 'User';
+    // private EndpointBaseUrl = 'http://34.227.61.151:3000/api/' + 'User';
+    private EndpointBaseUrl = `${environment.baseApiUrl}/User`;
 
     constructor(public _httpClient: HttpClient) { } // public _appSettings: AppSettings
 

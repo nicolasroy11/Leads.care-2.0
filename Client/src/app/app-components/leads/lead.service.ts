@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
+import { environment } from '../../../environments/environment';
 // import { AppSettings } from '../.../framework-components/Settings/AppSettings';
 // import { LeadModel } from '../../../../../Shared/Models/LeadModel';
 
 @Injectable()
 export class LeadService {
-    private _apiUrl= 'http://localhost:3000/api/' + 'Leads';
+    // private _apiUrl= 'http://localhost:3000/api/' + 'Leads';
+    private _apiUrl = `${environment.baseApiUrl}/Leads`;
 
     constructor(private _httpClient: HttpClient) {
     } // public _appSettings: AppSettings
