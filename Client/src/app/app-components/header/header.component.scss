@@ -1,0 +1,48 @@
+/* Landing Page */
+.top-bar-container {
+    display: flex;
+    justify-content: space-around;
+    height: 50px;
+    width: 100%;
+    background-color: #026670;
+    box-sizing: border-box;  
+    margin: 0 auto;
+    font-size: 24px;   
+}
+
+.top-bar-item { 
+    width: 150px;
+    height: 50px;
+    text-align: right;
+    font-size: 24px;  
+    float: right;
+}
+
+.top-bar-font {
+    color: white;
+    text-decoration: none;  
+    vertical-align: middle;
+    line-height: 50px;
+    margin-right: 20px; 
+}
+
+.top-bar-main-menu {
+    width: 150px;
+    height: 50px;
+    text-align: left;
+    font-size: 24px;  
+    float: left;
+    margin-left: 20px; 
+}
+
+.top-bar-menu-font {
+    color: white;
+    text-decoration: none;  
+    vertical-align: middle;
+    line-height: 50px;
+    margin-right: 20px;
+}
+
+#top-bar-container a:hover {
+    color: red;
+}

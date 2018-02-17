@@ -1,7 +1,12 @@
+import { MatDatepickerModule,
+         MatFormFieldModule,
+         MatNativeDateModule,
+         MatInputModule,
+         MatCheckboxModule,
+         MatCardModule } from '@angular/material';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { MatDatepickerModule, MatFormFieldModule, MatNativeDateModule, MatInputModule } from '@angular/material';
 import { LeadFormComponent } from './lead-form-component/lead-form.component';
 import { PhoneFormComponent } from './phone-form-component/phone-form.component';
 import { AppSettings } from '../../framework-components/settings/app-settings';
@@ -14,7 +19,9 @@ import { AppSettings } from '../../framework-components/settings/app-settings';
         MatDatepickerModule,
         MatFormFieldModule,
         MatNativeDateModule,
-        MatInputModule
+        MatInputModule,
+        MatCheckboxModule,
+        MatCardModule
     ],
     exports: [
         LeadFormComponent,

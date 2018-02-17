@@ -9,7 +9,8 @@ import { PhoneNumberModel } from '../../../../../../Shared/Models/PhoneNumberMod
 @Component({
     moduleId: module.id,
     selector: 'pm-phone-form',
-    templateUrl: 'phone-form.component.html'
+    templateUrl: 'phone-form.component.html',
+    styleUrls: ['phone-form.component.scss']
 })
 export class PhoneFormComponent {
     @Input() PhoneNumber: PhoneNumberModel;

@@ -8,7 +8,8 @@ import { AppSettings } from '../../../framework-components/settings/app-settings
 @Component({
     moduleId: module.id,
     selector: 'pm-lead-form',
-    templateUrl: 'lead-form.component.html'
+    templateUrl: 'lead-form.component.html',
+    styleUrls: ['lead-form.component.scss']
 })
 export class LeadFormComponent implements OnInit {
     @Input() public SearchMode = false;

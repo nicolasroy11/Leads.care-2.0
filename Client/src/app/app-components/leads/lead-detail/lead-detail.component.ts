@@ -10,7 +10,8 @@ import { AppSettings } from '../../../framework-components/settings/app-settings
 @Component({
     moduleId: module.id,
     selector: 'pm-lead-detail',
-    templateUrl: 'lead-detail.component.html'
+    templateUrl: 'lead-detail.component.html',
+    styleUrls: ['lead-detail.component.scss']
 })
 export class LeadDetailComponent implements OnInit {
     @ViewChild(LeadFormComponent) public LeadForm: LeadFormComponent;

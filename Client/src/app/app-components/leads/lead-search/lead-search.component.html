@@ -1,12 +1,12 @@
 <div class="row">
-    <header></header>
+    <pm-header></pm-header>
     <mat-expansion-panel [hideToggle]="false">
         <mat-expansion-panel-header class="sub-header" id="search-header">
             <p class="sub-header-text">search filters</p>
         </mat-expansion-panel-header>
         <mat-panel-description>
             <div>
-                <button (click)="OnClearSearchCriteria()" class="btn">clear search</button>
+                <button mat-button mat-raised-button class="btn" (click)="OnClearSearchCriteria()" >clear search</button>
                 <pm-lead-form (LeadChange)="SearchCriteriaChange()" [SearchMode]="true"></pm-lead-form>
             </div>
         </mat-panel-description>

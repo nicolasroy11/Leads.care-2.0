@@ -330,61 +330,6 @@ a {
     text-decoration: none;
 }
 
-/* Landing Page */
-.top-bar-container {
-    height: 50px;
-    width: 100%;
-    background-color: #026670;
-    box-sizing: border-box;  
-    margin: 0 auto;
-    font-size: 24px;   
-}
-
-.top-bar-sign-out { 
-    width: 150px;
-    height: 50px;
-    text-align: right;
-    font-size: 24px;  
-    float: right;
-}
-
-.top-bar-main-menu {
-    width: 200px;
-    height: 50px;
-    text-align: right;
-    font-size: 24px;  
-    float: left;
-}
-
-.top-bar-font {
-    color: white;
-    text-decoration: none;  
-    vertical-align: middle;
-    line-height: 50px;
-    margin-right: 20px; 
-}
-
-.top-bar-main-menu {
-    width: 150px;
-    height: 50px;
-    text-align: left;
-    font-size: 24px;  
-    float: left;
-    margin-left: 20px; 
-}
-
-.top-bar-menu-font {
-    color: white;
-    text-decoration: none;  
-    vertical-align: middle;
-    line-height: 50px;
-    margin-right: 20px;
-}
-
-#top-bar-container a:hover {
-    color: red;
-}
-
 .menu-button {
     height: 50%;
     width: 100%;
@@ -464,26 +409,6 @@ a {
     color: black;
 }
 
-.form-input-phone-3-digits {
-    width: 28px;
-    height: 45px;
-    border: none;
-    outline: none;
-    font-size: 14px;
-    color: black;
-    padding-right: 0;
-}
-
-.form-input-phone-4-digits {
-    width: 35px;
-    height: 47px;
-    border: none;
-    outline: none;
-    font-size: 14px;
-    color: black;
-    padding-right: 0;
-}
-
 .notes-on-client-container {
     height: 200px;
     width: 100%;
@@ -513,12 +438,12 @@ textarea {
 }
 
 .btn {
-  color: #ffffff;
-  font-size: 20px;
-  background: #026670;
-  padding: 10px 20px 10px 20px;
-  text-decoration: none;
-  border: none;  
+    color: #ffffff !important;
+    font-size: 20px;
+    background: #026670;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    border: none;  
     top: 10px;
 }
 

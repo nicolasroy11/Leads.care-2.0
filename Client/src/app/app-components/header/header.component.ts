@@ -5,8 +5,9 @@ import { AuthService } from '../../auth.service';
 
 @Component({
     moduleId: module.id,
-    selector: 'header',
+    selector: 'pm-header',
     templateUrl: 'header.component.html',
+    styleUrls: ['header.component.scss'],
     providers: [AuthService]
 })
 export class HeaderComponent {

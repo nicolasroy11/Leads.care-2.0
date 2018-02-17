@@ -18,7 +18,9 @@
     "docker-tag-for-deploy": "docker tag leads_care:client_$(npm get semver) $(npm get ecr_uri)/leads_care:client_latest",
     "docker-push-aws": "docker push $(npm get ecr_uri)/leads_care:client_latest",
     "docker-deploy-aws": "npm run docker-build  && npm run docker-tag-for-deploy && npm run docker-push-aws",
-    "test1": "echo $(npm get ecr_uri)"
+    "aws": "aws",
+    "aws-test": "aws --version",
+    "sh-test": "./scripts/aws_deploy.sh"
   },
   "private": true,
   "dependencies": {
