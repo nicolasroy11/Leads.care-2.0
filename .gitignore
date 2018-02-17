@@ -12,6 +12,7 @@ Server/.npmrc
 
 # Client
 Client/dist
+Client/scripts
 Client/tmp
 Client/out-tsc
 Client/dist
