@@ -3,6 +3,9 @@
     <label class="sub-header">
         <p class="sub-header-text">Lead Details</p>
     </label>
+    <div class="save-changes-button-container">
+        <button [disabled]="!LeadForm.IsValid()" mat-button mat-raised-button class="btn" (click)="SaveLead()">Save</button>
+    </div>
     <pm-lead-form (SearchCriteriaChange)="SearchCriteriaChange()" [SearchMode]="false"></pm-lead-form>
     <div class="save-changes-button-container">
         <button [disabled]="!LeadForm.IsValid()" mat-button mat-raised-button class="btn" (click)="SaveLead()">Save</button>

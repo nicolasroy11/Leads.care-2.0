@@ -7,11 +7,11 @@ html {
 }
 
 body {
-    background: #fff;
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.06);
-    color: #545454;
+    /* box-shadow: 0 0 2px rgba(0, 0, 0, 0.06); */
+    /* color: #545454; */
     /* font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; */
-    font-family: 'Quicksand', sans-serif;
+    /* background: #fff; */
+    font-family: 'Quicksand', 'Helvetica Neue', sans-serif;
     font-size: 16px;
     margin: 0 auto;
     overflow-x: hidden;
@@ -24,16 +24,6 @@ body {
 .mat-expansion-panel-content {
     font-family: 'Quicksand', sans-serif;
 }
-/* @media only screen 
-and (min-device-width : 7px) 
-and (max-device-width : 1060px) {
-    body {
-        background: black;
-        color: red;
-        max-width: 700px;
-        padding: 2em 2em 4em;
-    }
-} */
 
 label {
     font-weight: normal !important;
@@ -41,21 +31,6 @@ label {
 
 a:hover {
     text-decoration: none
-}
-
-/* calendar popup */
-.mydp, .mydp .headertodaybtn, .mydp .selection, .mydp .selectiongroup, .mydp .selector {
-    border-radius: 0px !important;
-    border: none !important;
-}
-
-.mydp .selection {
-    margin-left: 39px;
-}
-
-.bg-primary {
-    color: #000;
-    background-color: #fff !important;
 }
 
 /*this is the top menu bar section*/
@@ -173,59 +148,6 @@ a {
     text-decoration: none;
 }
 
-.form-input{
-    width: 500px;
-    height: 70px;
-    border: none;
-    margin-left: 50px;
-    font-size: 3rem;
-    outline: none;   
-}
-
-.form-input-budget {
-    width: 800px;
-    height: 70px;
-    border: none;
-    font-size: 3rem;
-    outline: none;
-}
-
-#form-one-lead-name-test {
-    width: 800px;
-    height: 150px;
-    border: none;
-    font-size: 3rem;
-    margin-left: 50px;
-    outline: none;  
-    background-color:greenyellow;
-}
-
-.client-name {
-    width: 100%;
-    height: 80px;
-    background-color: grey;
-    margin: none;
-   
-}
-
-.client-text {
-    font-family: 'Quicksand', sans-serif;
-    font-size: 48px;
-    color: #026670;
-    line-height: 100px;
-    padding-left: 50px;
-    margin: auto;
-}
-
-#cleint-nieghborhood {
-    font-family: 'Quicksand', sans-serif;
-    font-size: 48px;
-    color: #026670;
-    line-height: 100px;
-    padding-left: 4px;
-    margin: auto;
-}
-
 .select-hoods-container {
     height: 500px;
     width: 100%;
@@ -234,35 +156,6 @@ a {
 
 .text-check {
     font-size: 48px;
-}
-
-.check-box {
-    -webkit-appearance: none;
-	background-color: #fff;
-	border: 3px solid #cacece;
-	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
-	padding: 35px;
-    outline: none;
-}
-
-.check-box:active, .regular-checkbox:checked:active {
-	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
-}
-
-.check-box:checked {
-	background-color: #9FEDD7;
-	border: 1px solid #adb8c0;
-	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1);
-	color: #9FEDD7;
-}
-
-.check-box:checked:after {
-	content: '\2714';
-	font-size: 14px;
-	position: absolute;
-	top: 0px;
-	left: 3px;
-	color: #99a1a7;
 }
 
 .green-line {
@@ -285,15 +178,6 @@ a {
     color: #026670;
 }
 
-.lead-name {
-    margin: 0;
-    padding: 0;
-    font-size: 20px;
-    line-height: 250%;
-    padding-left: 30px;
-    color: #026670;
-}
-
 .underline {
     width: 100%;
     height: 5px;
@@ -304,30 +188,6 @@ a {
     width: 70%;
     height: 5px;
     background-color: white;
-}
-
-/*this is the top menu bar section*/
-.topBar {
-    height: 10%;
-    width: 100%;
-    background-color: #026670; 
-    box-sizing: border-box;
-    }
-
-#topBarMainMenu {
-    font-size: 43px;
-    color: white;
-    line-height: 130px;
-    padding-left: 50px;
-    }
-
-.nav {
-    float: right;
-    list-style: none;
-}
-
-.searchLeadsClick {
-    text-decoration: none;
 }
 
 .menu-button {
@@ -368,7 +228,6 @@ a {
 
 
 /* Lead Form Component */
-
  .sub-header-text {
      font-size: 24px;
      color: #026670;
@@ -406,7 +265,6 @@ a {
     outline: none;
     margin-left: 44px;
     font-size: 14px;
-    color: black;
 }
 
 .notes-on-client-container {

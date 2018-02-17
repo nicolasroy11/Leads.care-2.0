@@ -3,7 +3,6 @@ import { ActivatedRoute, Router, Params } from '@angular/router';
 import { Location } from '@angular/common';
 import { LeadService } from '../Lead.Service';
 import { LeadModel } from '../../../../../../Shared/Models/LeadModel';
-// import { Neighborhoods } from '../../../../../../Shared/Constants/Neighborhoods';
 import { LeadFormComponent } from '../../common/lead-form-component/lead-form.component';
 import { AppSettings } from '../../../framework-components/settings/app-settings';
 
