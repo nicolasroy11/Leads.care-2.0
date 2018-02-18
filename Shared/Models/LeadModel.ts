@@ -2,8 +2,8 @@ import { MongoModel } from './MongoModel';
 import { PhoneNumberModel } from './PhoneNumberModel';
 
 export class LeadModel extends MongoModel {
-    public LeadId?: number = undefined;
-    public UserId?: number = undefined;
+    public LeadId?: string = undefined;
+    public UserId?: string = undefined;
     public Name?: string = undefined;
     public Email?: string = undefined;
     public Status?: number = undefined;

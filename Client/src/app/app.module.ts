@@ -49,7 +49,7 @@ import { AppSettingsGuard } from './framework-components/settings/app-settings-g
       { path: 'welcome', component: LandingMenuComponent, canActivate: [CanActivateViaAuthGuard] },
       { path: 'leads', component: LeadSearchComponent, canActivate: [CanActivateViaAuthGuard, AppSettingsGuard] },
       { path: 'leads/:leadId', component: LeadDetailComponent, canActivate: [CanActivateViaAuthGuard, AppSettingsGuard] },
-      { path: 'leads/0', component: LeadDetailComponent, canActivate: [CanActivateViaAuthGuard, AppSettingsGuard] },
+      { path: 'leads/new', component: LeadDetailComponent, canActivate: [CanActivateViaAuthGuard, AppSettingsGuard] },
       {
         path: '*/path',
         redirectTo: '',

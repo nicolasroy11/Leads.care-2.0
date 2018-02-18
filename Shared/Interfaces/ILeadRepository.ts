@@ -4,8 +4,8 @@ import { LeadModel } from '../Models/LeadModel';
 import { LeadSearchCriteriaModel } from '../Models/LeadSearchCriteriaModel';
 import { DictionarySearchResultModel } from '../Models/DictionarySearchResultModel';
 
-export interface ILeadRepository extends IDataLayerRepoModifier<number, LeadModel>,
+export interface ILeadRepository extends IDataLayerRepoModifier<string, LeadModel>,
     IDataLayerRepoSearcher<LeadModel, LeadSearchCriteriaModel, DictionarySearchResultModel> {
-    Get(leadId: number): Promise<LeadModel>
-    Delete(leadId: number): Promise<string>
+    Get(leadId: string): Promise<LeadModel>
+    Delete(leadId: string): Promise<string>
 }

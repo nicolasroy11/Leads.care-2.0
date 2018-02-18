@@ -14,11 +14,11 @@ export class LeadService {
         return this._httpClient.post(`${this._apiUrl}/Search`, searchModel);
     }
 
-    public get(leadId: number): Observable<any> {
+    public get(leadId: string): Observable<any> {
         return this._httpClient.get(`${this._apiUrl}/${leadId}`);
     }
 
-    public delete(leadId: number): Observable<any> {
+    public delete(leadId: string): Observable<any> {
         return this._httpClient.delete(`${this._apiUrl}/${leadId}`);
     }
 

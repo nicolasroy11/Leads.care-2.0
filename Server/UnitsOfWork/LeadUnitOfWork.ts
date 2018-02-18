@@ -5,7 +5,7 @@ import { LeadSearchCriteriaModel } from '../../Shared/Models/LeadSearchCriteriaM
 import { DictionarySearchResultModel } from '../../Shared/Models/DictionarySearchResultModel';
 
 export class LeadUnitOfWork {
-    public Get(leadId: number): Promise<any> {
+    public Get(leadId: string): Promise<any> {
         let repo: ILeadRepository = ServiceLocator.Instance.Get('ILeadRepository');
 
         return repo.Get(leadId).then((lead: LeadModel) => {
@@ -28,7 +28,7 @@ export class LeadUnitOfWork {
         });
     }
 
-    public Delete(leadId: number): Promise<any> {
+    public Delete(leadId: string): Promise<any> {
         let remoteRepo: ILeadRepository = ServiceLocator.Instance.Get('ILeadRepository');
 
         return remoteRepo.Delete(leadId).then(() => { });

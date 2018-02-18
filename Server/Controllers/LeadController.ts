@@ -11,7 +11,7 @@ import { Cors } from '../Middleware/Cors';
 @UseBefore(Cors)
 export class LeadController {
     @Get('/:leadId')
-    public Get( @Param('leadId') leadId: number): Promise<LeadModel> {
+    public Get( @Param('leadId') leadId: string): Promise<LeadModel> {
         let uow: LeadUnitOfWork = new LeadUnitOfWork();
         let response: Promise<LeadModel> = uow.Get(leadId);
         return response;
@@ -32,7 +32,7 @@ export class LeadController {
     }
 
     @Delete('/:leadId')
-    public Delete( @Param('leadId') leadId: number): Promise<string> {
+    public Delete( @Param('leadId') leadId: string): Promise<string> {
         let uow: LeadUnitOfWork = new LeadUnitOfWork();
         let response: Promise<string> = uow.Delete(leadId);
         return response;

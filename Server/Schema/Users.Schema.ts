@@ -1,10 +1,8 @@
 import * as mongoose from 'mongoose';
-import * as validator from 'mongoose-unique-validator';
-import * as autoIncrement from 'mongoose-auto-increment-fix';
 import * as bcrypt from 'bcryptjs';
 
 export interface IUserSchema extends mongoose.Document {
-    UserId: mongoose.Schema.Types.Number,
+    UserId: mongoose.Schema.Types.String,
     Name: mongoose.Schema.Types.String,
     Username: mongoose.Schema.Types.String,
     Password: mongoose.Schema.Types.String,
@@ -13,7 +11,7 @@ export interface IUserSchema extends mongoose.Document {
 }
 
 const _userSchema: mongoose.Schema = new mongoose.Schema({
-    UserId: mongoose.Schema.Types.Number,
+    UserId: { type: mongoose.Schema.Types.String, unique: true },
     Name: { type: mongoose.Schema.Types.String, required: true },
     Username: { type: mongoose.Schema.Types.String, required: true, unique: true },
     Password: { type: mongoose.Schema.Types.String, required: true },
@@ -21,12 +19,8 @@ const _userSchema: mongoose.Schema = new mongoose.Schema({
     Salt: mongoose.Schema.Types.String
 });
 
-autoIncrement.initialize(mongoose.connection);
-_userSchema.plugin(autoIncrement.plugin, 'User');
-_userSchema.plugin(validator);
-
 _userSchema.pre('save', function (next) {
-    this.UserId = this._id;
+    this.UserId = this._id.toHexString();
     this.Password = bcrypt.hashSync(this.Password, 10);
     next();
 });

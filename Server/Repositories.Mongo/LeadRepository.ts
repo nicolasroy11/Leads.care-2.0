@@ -10,13 +10,12 @@ import { LeadSchema } from '../Schema/Leads.Schema';
 import { BadRequestError } from 'routing-controllers';
 import { NotFoundError } from 'routing-controllers';
 import { MongoErrors } from '../Framework/Error/MongoErrors';
-// var mongoose = require('mongoose');
-// var ObjectId = mongoose.Types.ObjectId;
+import { Types } from 'mongoose';
 
 export class LeadRepository implements ILeadRepository {
-    public Get(leadId: number): Promise<LeadModel> {
+    public Get(leadId: string): Promise<LeadModel> {
         return new Promise<LeadModel>((resolve, reject) => {
-            LeadSchema.findOne({LeadId: leadId}, (err, lead) => {
+            LeadSchema.findById(Types.ObjectId(leadId), (err, lead) => {
                 try {
                     if (err) {
                         let error: BadRequestError = { ...new BadRequestError(), ...MongoErrors.GetMongoError(err) };
@@ -31,7 +30,7 @@ export class LeadRepository implements ILeadRepository {
                 } catch (err) {
                     reject(err);
                 }
-            });
+            }).select("-_id");
         });
     }
 
@@ -40,7 +39,12 @@ export class LeadRepository implements ILeadRepository {
             let searchFilter = this.GetSearchFilter(searchCriteria);
             LeadSchema.find(searchFilter, (err: any, response: LeadModel[], numAffected: number) => {
                 let model: DictionarySearchResultModel = new DictionarySearchResultModel();
-                let leads = this.SortByNeighborhood(response, searchCriteria.Neighborhoods);
+                let leads = new Array<LeadModel>();
+                if (searchCriteria.Neighborhoods.length) {
+                    leads = this.SortByNeighborhood(response, searchCriteria.Neighborhoods);
+                }else {
+                    leads = response;
+                }
                 let leadsDictionary = this.MapToLeadsDictionary(leads);
                 model.TotalElements = leads.length;
                 model.Content = leadsDictionary;
@@ -142,7 +146,7 @@ export class LeadRepository implements ILeadRepository {
         });
     }
 
-    public Delete(leadId: number): Promise<string> {
+    public Delete(leadId: string): Promise<string> {
         return new Promise<string>((resolve, reject) => {
             LeadSchema.findByIdAndRemove(leadId, (err, lead) => {
                 resolve();

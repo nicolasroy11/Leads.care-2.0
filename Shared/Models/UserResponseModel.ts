@@ -1,7 +1,7 @@
 import { BaseModel } from './BaseModel';
 
 export class UserResponseModel extends BaseModel {
-    public UserId: number;
+    public UserId: string;
     public Name: string;
     public UserRequestTypeId: number;
     public UserRequestTypeName: string;

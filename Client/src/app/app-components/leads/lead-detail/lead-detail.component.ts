@@ -19,7 +19,7 @@ export class LeadDetailComponent implements OnInit {
     public IsNew: boolean;
     public Lead: LeadModel;
     public IsEditable: boolean;
-    public KeyId: number;
+    public KeyId: string;
     // public Neighborhoods = Neighborhoods;
     public Neighborhoods = this._appSettings.constants.Neighborhoods;
     public RequestInProgress = false;
@@ -38,8 +38,8 @@ export class LeadDetailComponent implements OnInit {
 
     public ngOnInit() {
         this._route.params.forEach((params: Params) => {
-            this.KeyId = +params['leadId'];
-            this.IsNew = this.KeyId === 0;
+            this.KeyId = params['leadId'];
+            this.IsNew = this.KeyId === 'new';
             if (!this.IsNew) {
                 this.Service.get(this.KeyId).subscribe(
                     (res) => {
@@ -55,7 +55,7 @@ export class LeadDetailComponent implements OnInit {
 
     public SaveLead() {
         this.RequestInProgress = true;
-        this.LeadForm.LeadModel.UserId = +localStorage.getItem('UserId');
+        this.LeadForm.LeadModel.UserId = localStorage.getItem('UserId');
         this.EditingContext = this.LeadForm.LeadModel;
         this.Service.save(this.EditingContext).subscribe(() => {
             this.RequestInProgress = false;

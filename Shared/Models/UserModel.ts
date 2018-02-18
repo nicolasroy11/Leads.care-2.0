@@ -1,7 +1,7 @@
 import { MongoModel } from './MongoModel';
 
 export class UserModel extends MongoModel {
-    public UserId: number;
+    public UserId: string;
     public Name: string;
     public Email: string;
     public Username: string;
