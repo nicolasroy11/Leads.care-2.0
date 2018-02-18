@@ -12,6 +12,7 @@ COPY . /usr/src/app
 COPY Shared /usr/src/Shared
 
 # Install dependencies
+RUN npm install -g pm2
 RUN npm install
 RUN npm run tsc
 
@@ -19,4 +20,4 @@ RUN npm run tsc
 EXPOSE 3000
 
 # Serve the app
-CMD ["npm", "start"]
+CMD ["pm2-runtime", "Main.js"]

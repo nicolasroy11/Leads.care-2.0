@@ -4,7 +4,6 @@
   "description": "Server for leads.care",
   "main": "Main.js",
   "scripts": {
-    "start": "node Main",
     "start-local-mongo": "sudo ~/mongodb/bin/mongod --fork --logpath /usr/local/var/log/mongodb/mongo.log",
     "stop-local-mongo": "sudo ~/mongodb/bin/mongo localhost/admin --eval 'db.shutdownServer()'",
     "dev-start": "npm run start-local-mongo && node_modules/typescript/bin/tsc -p . && nodemon --inspect=12345 Main.js",
@@ -13,13 +12,12 @@
     "delete-shared": "rm -r ./Shared",
     "docker": "docker",
     "docker-build": "npm run copy-shared && docker build -t leads_care:server_$(npm get semver) . && npm run delete-shared",
-    "docker-run": "docker run -d --name node-c -p 3000:3000 node-image",
+    "docker-run": "docker run -d --name server-container -p 3000:3000 leads_care:server_$(npm get semver)",
     "docker-br": "npm run docker-build && npm run docker-run",
     "docker-stop": "docker stop node-c",
     "docker-rm": "docker rm node-c",
     "docker-rmi": "docker rmi node-image",
     "docker-clean": "npm run docker-stop && npm run docker-rm && npm run docker-rmi",
-
     "docker-tag-for-deploy": "docker tag leads_care:server_$(npm get semver) $(npm get ecr_uri)/leads_care:server_latest",
     "docker-push-aws": "docker push $(npm get ecr_uri)/leads_care:server_latest",
     "docker-deploy-aws": "npm run docker-build && npm run docker-tag-for-deploy && npm run docker-push-aws",

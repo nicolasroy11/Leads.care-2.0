@@ -15,6 +15,8 @@
     "serve-dist": "node Main",
     "pre-docker-build": "ng build --prod",
     "docker-build": "npm run pre-docker-build && docker build -t leads_care:client_$(npm get semver) .",
+    "docker-run": "docker run -d --name client-container -p 4200:4200 leads_care:client_$(npm get semver)",
+    "docker-br": "npm run docker-build && npm run docker-run",
     "docker-tag-for-deploy": "docker tag leads_care:client_$(npm get semver) $(npm get ecr_uri)/leads_care:client_latest",
     "docker-push-aws": "docker push $(npm get ecr_uri)/leads_care:client_latest",
     "docker-deploy-aws": "npm run docker-build  && npm run docker-tag-for-deploy && npm run docker-push-aws",
