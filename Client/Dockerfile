@@ -16,10 +16,10 @@ COPY Main.js /usr/src/app
 COPY dist /usr/src/app/dist
 
 # Install dependecies
-RUN npm install -g pm2
+# RUN npm install -g pm2
 RUN npm install
 
 EXPOSE 4200
 
 # Serve the app
-CMD ["pm2-runtime", "Main.js"]
+CMD ["node", "Main.js"]
