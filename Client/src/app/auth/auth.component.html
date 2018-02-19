@@ -1,66 +1,54 @@
-<mat-card style="margin:10%">
-  <div *ngIf="!IsNewUser" (click)="OnChangeUserStatus()"><a>New User?</a></div><br/>
-  <div *ngIf="IsNewUser" (click)="OnChangeUserStatus()"><a>Have an account? Log In Here!</a></div>
-  <!-- <h2 *ngIf="ErrorMessage">{{ErrorMessage}}</h2> -->
-  <form [formGroup]="AuthForm">
-      <div *ngIf="IsNewUser">
-          <div>
-              <p class="field-label">Name</p>
-          </div>
-          <div class="field-input">
-              <input type="text"
-                      class="form-input"
-                      placeholder="name"
-                      id="name"
-                      formControlName="Name"
-                      matInput />
-          </div>
-      </div>
-      <div *ngIf="IsNewUser">
-          <div>
-              <p class="field-label">Email</p>
-          </div>
-          <div class="field-input">
-              <input type="text"
-                      class="form-input"
-                      placeholder="email"
-                      id="email"
-                      formControlName="Email"
-                      matInput />
-          </div>
-      </div>
-      <div>
-          <div>
-              <p class="field-label">User Name</p>
-          </div>
-          <div class="field-input">
-              <input type="text"
-                      class="form-input"
-                      placeholder="user name"
-                      id="username"
-                      formControlName="Username"
-                      matInput >
-          </div>
-      </div>
-      <div>
-          <div>
-              <p class="field-label">Password</p>
-          </div>
-          <div class="field-input">
-              <input type="password"
-                      class="form-input"
-                      placeholder="password"
-                      id="password"
-                      formControlName="Password"
-                      matInput >
-          </div>
-      </div>
+<mat-card style="margin:10%;box-shadow: 5px 10px 15px 12px rgba(0,0,0,0.2);">
+    <form [formGroup]="AuthForm">
+        <div *ngIf="IsNewUser">
+            <div>
+                <p class="field-label">Name</p>
+            </div>
+            <div class="field-input">
+                <input type="text" class="form-input" placeholder="name" id="name" formControlName="Name" matInput />
+            </div>
+        </div>
+        <div *ngIf="IsNewUser">
+            <div>
+                <p class="field-label">Email</p>
+            </div>
+            <div class="field-input">
+                <input type="text" class="form-input" placeholder="email" id="email" formControlName="Email" matInput />
+            </div>
+        </div>
+        <div>
+            <div>
+                <p class="field-label">User Name</p>
+            </div>
+            <div class="field-input">
+                <input type="text" class="form-input" placeholder="user name" id="username" formControlName="Username" matInput>
+            </div>
+        </div>
+        <div>
+            <div>
+                <p class="field-label">Password</p>
+            </div>
+            <div class="field-input">
+                <input type="password" class="form-input" placeholder="password" id="password" formControlName="Password" matInput>
+            </div>
+        </div>
 
-      <div class="save-changes-button-container">
-          <button *ngIf="!IsNewUser" [disabled]="!AuthForm.valid" (click)="Login()" class="btn" mat-button mat-raised-button>Log In</button>
-      </div>
-      <div class="save-changes-button-container">
-          <button *ngIf="IsNewUser" [disabled]="!AuthForm.valid" (click)="SignUp()" class="btn" mat-button>Sign Up</button>
-      </div>
-  </form>
+        <div class="save-changes-button-container">
+            <button *ngIf="!IsNewUser" [disabled]="!AuthForm.valid" (click)="Login()" class="btn" mat-button mat-raised-button>Log In</button>
+        </div>
+        <div class="save-changes-button-container">
+            <button *ngIf="IsNewUser" [disabled]="!AuthForm.valid" (click)="SignUp()" class="btn" mat-button>Sign Up</button>
+        </div>
+        <div class="save-changes-button-container">
+            <br/>
+            <div>OR</div>
+            <br/>
+            <div *ngIf="!IsNewUser" (click)="OnChangeUserStatus()">
+                <button mat-button mat-raised-button>New User? Register here!</button>
+            </div>
+            <div *ngIf="IsNewUser" (click)="OnChangeUserStatus()">
+                <button mat-button mat-raised-button>Already have an account? Log In Here!</button>
+            </div>
+        </div>
+    </form>
 </mat-card>
