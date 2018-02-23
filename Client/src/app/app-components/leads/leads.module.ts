@@ -9,7 +9,7 @@ import { LeadsCommonModule } from '../common/common.module';
 import { LeadService } from './Lead.Service';
 import { SearchDataRegistry } from '../../framework-components/services/SearchDataRegistry';
 
-import { MatExpansionModule, MatButtonModule, MatProgressSpinnerModule } from '@angular/material';
+import { MatExpansionModule, MatButtonModule, MatProgressSpinnerModule, MatSnackBarModule } from '@angular/material';
 import { LeadSearchComponent } from './lead-search/lead-search.component';
 import { LeadDetailComponent } from './lead-detail/lead-detail.component';
 import { LeadLetterGroupComponent } from './lead-search/lead-letter-group/lead-letter-group.component';
@@ -26,7 +26,8 @@ import { AppSettings } from '../../framework-components/settings/app-settings';
         LeadsCommonModule,
         MatExpansionModule,
         MatButtonModule,
-        MatProgressSpinnerModule
+        MatProgressSpinnerModule,
+        MatSnackBarModule
     ],
     exports: [],
     declarations: [

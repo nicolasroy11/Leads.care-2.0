@@ -1,0 +1,20 @@
+.title {
+    font-size: 29px;
+    color: #026670;
+    margin-bottom: 10px;
+}
+
+.caption {
+    font-size: 19px;
+    color: #026670;
+    margin-bottom: 15px;
+}
+
+.inline-caption {
+    padding: 52px;
+}
+
+.image-with-caption {
+    display: flex;
+    flex-flow: row wrap;
+}

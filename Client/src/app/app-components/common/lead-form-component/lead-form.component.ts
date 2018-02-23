@@ -35,6 +35,7 @@ export class LeadFormComponent implements OnInit {
         this.LeadModel = new LeadSearchCriteriaModel();
         this.LeadModel.Neighborhoods = [];
         this.ResetNeighborhoodCheckboxes();
+        this.SetInitialStatus();
     }
 
     public OnChange(): void {
@@ -79,6 +80,17 @@ export class LeadFormComponent implements OnInit {
             this.LeadModel.MaxBudget !== undefined &&
             this.LeadModel.MaxBedrooms !== undefined ;
         return isValid;
+    }
+
+    public IsDirty(): boolean {
+        const isDirty: boolean =
+            this.LeadModel.Status !== this.StatusTypes.Inactive ||
+            this.LeadModel.Neighborhoods.length !== 0 ||
+            this.LeadModel.MoveInDate !== undefined  ||
+            this.LeadModel.Name !== undefined ||
+            this.LeadModel.MaxBudget !== undefined ||
+            this.LeadModel.MaxBedrooms !== undefined ;
+        return isDirty;
     }
 
     public OnStatusChange(e: any): void {

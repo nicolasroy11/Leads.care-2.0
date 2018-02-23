@@ -1,13 +1,15 @@
 <div class="row lead-detail-page">
     <pm-header></pm-header>
-    <label class="sub-header">
-        <p class="sub-header-text">Lead Details</p>
-    </label>
+    <div class="sub-header">
+        <p class="sub-header-text">{{Title}}</p>
+    </div>
     <div class="save-changes-button-container">
+        <button [routerLink]="['/leads']" [disabled]="!LeadForm.IsValid()" mat-button mat-raised-button class="btn">Back to Search</button>
         <button [disabled]="!LeadForm.IsValid()" mat-button mat-raised-button class="btn" (click)="SaveLead()">Save</button>
     </div>
     <pm-lead-form (SearchCriteriaChange)="SearchCriteriaChange()" [SearchMode]="false"></pm-lead-form>
     <div class="save-changes-button-container">
+        <button [routerLink]="['/leads']" [disabled]="!LeadForm.IsValid()" mat-button mat-raised-button class="btn">Back to Search</button>
         <button [disabled]="!LeadForm.IsValid()" mat-button mat-raised-button class="btn" (click)="SaveLead()">Save</button>
     </div>
 </div>

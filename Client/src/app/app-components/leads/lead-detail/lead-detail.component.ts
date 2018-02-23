@@ -40,6 +40,7 @@ export class LeadDetailComponent implements OnInit {
         this._route.params.forEach((params: Params) => {
             this.KeyId = params['leadId'];
             this.IsNew = this.KeyId === 'new';
+            this.Title = this.IsNew ? 'Create a new lead' : 'Edit lead';
             if (!this.IsNew) {
                 this.Service.get(this.KeyId).subscribe(
                     (res) => {

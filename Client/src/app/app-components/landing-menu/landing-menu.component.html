@@ -1,25 +1,21 @@
-<section id="two-button-section">
-    <pm-header></pm-header>
-    <div class="two-button-container">
-        <a [routerLink]="['/leads', 'new']" class="track-new-lead-click">
-            <div class="menu-button">
-                <div class="menu-button-text-container">
-                    <p class="menu-button-text">Track New Lead</p>
-                    <div class="svg-container">
-                        <img src="./assets/images/notepadtrack.svg" class="svg-format">
-                    </div>
-                </div>
+<pm-header></pm-header>
+<mat-card style="margin: 0 auto; min-width: 400px; max-width: 500px; margin-top:10%; padding:23px; box-shadow: 5px 10px 15px 12px rgba(0,0,0,0.2);">
+    <div class="title">[ Leads.care ]</div>
+    <div class="caption">Select a feature to get started</div>
+    <a [routerLink]="['/leads', 'new']">
+        <div class="image-with-caption">
+            <img src="./assets/images/notepadtrack.svg" class="svg-format">
+            <div class="caption inline-caption">
+                Track a new lead
             </div>
-        </a>
-        <a [routerLink]="['/leads']" class="search-leads-click">
-            <div class="menu-button">
-                <div class="menu-button-text-container">
-                    <p class="menu-button-text">Search Leads</p>
-                    <div class="svg-container">
-                        <img src="./assets/images//notepadsearch.svg" class="svg-format">
-                    </div>
-                </div>
+        </div>
+    </a>
+    <a [routerLink]="['/leads']">
+        <div class="image-with-caption">
+            <img src="./assets/images//notepadsearch.svg" class="svg-format">
+            <div class="caption inline-caption">
+                Search your leads
             </div>
-        </a>
-    </div>
-</section>
+        </div>
+    </a>
+</mat-card>

@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
     moduleId: module.id,
     selector: 'pm-landing-menu',
     templateUrl: 'landing-menu.component.html',
+    styleUrls: ['landing-menu.component.scss'],
     providers: []
 })
 export class LandingMenuComponent {

@@ -1,13 +1,21 @@
 <div class="row">
     <pm-header></pm-header>
-    <mat-expansion-panel [hideToggle]="false">
-        <mat-expansion-panel-header class="sub-header" id="search-header">
-            <p class="sub-header-text">search filters</p>
+    <mat-expansion-panel [hideToggle]="false" #expansionPanel>
+        <mat-expansion-panel-header class="sub-header">
+            <div class="mat-expansion-panel-header-content">
+                <div class="sub-header-option">
+                    <div class="plus-sign">+</div><p class="sub-header-text">search filters</p>
+                </div>
+                <div class="sub-header-option" [routerLink]="['/leads', 'new']">
+                    <div class="plus-sign">+</div><p class="sub-header-text">create new lead</p>
+                </div>
+            </div>
         </mat-expansion-panel-header>
         <mat-panel-description>
             <div>
                 <button mat-button mat-raised-button class="btn" (click)="OnClearSearchCriteria()" >clear search</button>
                 <pm-lead-form (LeadChange)="SearchCriteriaChange()" [SearchMode]="true"></pm-lead-form>
+                <button mat-button mat-raised-button class="btn" (click)="toggleExpansion()" ><i class="material-icons">close</i> close filter section</button>
             </div>
         </mat-panel-description>
     </mat-expansion-panel>

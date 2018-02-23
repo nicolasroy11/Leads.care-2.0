@@ -2,7 +2,8 @@ import {
     Component,
     OnInit,
     OnDestroy,
-    ViewChild
+    ViewChild,
+    AfterViewInit
 } from '@angular/core';
 import 'rxjs/add/operator/debounceTime';
 import { Location } from '@angular/common';
@@ -12,25 +13,36 @@ import { LeadSearchCriteriaModel } from '../../../../../../Shared/Models/LeadSea
 import { Subscription } from 'rxjs/Subscription';
 import { SearchDataRegistry } from '../../../framework-components/services/SearchDataRegistry';
 import { LeadFormComponent } from '../../common/lead-form-component/lead-form.component';
+import {
+    MatSnackBarRef,
+    MatSnackBar,
+    MatExpansionPanel
+} from '@angular/material';
 
 @Component({
     moduleId: module.id,
     selector: 'pm-lead-search',
     templateUrl: 'lead-search.component.html',
+    styleUrls: ['lead-search.component.scss'],
     providers: [LeadService]
 })
-export class LeadSearchComponent implements OnInit, OnDestroy {
+export class LeadSearchComponent implements OnInit, OnDestroy, AfterViewInit {
+
     @ViewChild(LeadFormComponent) public LeadForm: LeadFormComponent;
+    @ViewChild('expansionPanel') public ExpansionPanel: MatExpansionPanel;
     private _modelChange: Subscription;
     public ResultsCount = 0;
     public Letters: any[];
     public SearchResults: any[] = [];
     public TotalElements = 0;
     public SearchCriteria: LeadSearchCriteriaModel = new LeadSearchCriteriaModel();
+    public snackBarRef: MatSnackBarRef<any>;
 
     constructor(
         private _location: Location,
-        public Service: LeadService) {
+        public Service: LeadService,
+        public snackBar: MatSnackBar
+    ) {
     }
 
     public ngOnInit() {
@@ -43,16 +55,23 @@ export class LeadSearchComponent implements OnInit, OnDestroy {
         }
     }
 
+    public ngAfterViewInit(): void {
+        setTimeout(() => {
+            this.ExpansionPanel.expanded = false;
+        });
+    }
+
+    public ngOnDestroy() {
+        this._modelChange.unsubscribe();
+        this.snackBarRef.dismiss();
+    }
+
     public SearchCriteriaChange(): void {
         this.Search();
     }
 
     public OnBackClicked() {
         this._location.back();
-    }
-
-    public ngOnDestroy() {
-        this._modelChange.unsubscribe();
     }
 
     private Search(): void {
@@ -67,6 +86,17 @@ export class LeadSearchComponent implements OnInit, OnDestroy {
             undefined,
             () => {
                 SearchDataRegistry.Instance.RegisterSearchCriteria(this.LeadForm.LeadModel);
+                const isFormDirty = this.LeadForm.IsDirty();
+                if (isFormDirty) {
+                    this.snackBarRef = this.snackBar.open('Clear all filters?', 'yes');
+                    this.snackBarRef.onAction().subscribe(() => {
+                        this.LeadForm.ClearAll();
+                    });
+                } else {
+                    if (this.snackBarRef) {
+                        this.snackBarRef.dismiss();
+                    }
+                }
             }
         );
     }
@@ -79,4 +109,9 @@ export class LeadSearchComponent implements OnInit, OnDestroy {
         this.LeadForm.ClearAll();
         this.Search();
     }
+
+    public toggleExpansion() {
+        this.ExpansionPanel.expanded = !this.ExpansionPanel.expanded;
+    }
+
 }

@@ -5,12 +5,14 @@ import { RouterModule } from '@angular/router';
 import { HeaderModule } from '../header/header.module';
 
 import { LandingMenuComponent } from './landing-menu.component';
+import { MatCardModule } from '@angular/material';
 
 @NgModule({
     imports: [
         CommonModule,
         RouterModule,
-        HeaderModule
+        HeaderModule,
+        MatCardModule
     ],
     exports: [],
     declarations: [
