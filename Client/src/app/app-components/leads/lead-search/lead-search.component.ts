@@ -63,7 +63,9 @@ export class LeadSearchComponent implements OnInit, OnDestroy, AfterViewInit {
 
     public ngOnDestroy() {
         this._modelChange.unsubscribe();
-        this.snackBarRef.dismiss();
+        if (this.snackBarRef) {
+            this.snackBarRef.dismiss();
+        }
     }
 
     public SearchCriteriaChange(): void {
