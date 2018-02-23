@@ -20,7 +20,7 @@ export class PhoneFormComponent {
     @ViewChild('field3') public field3: ElementRef;
 
     public OnNewDigitEntered(e: any, position: number): void {
-        if (e.length === 3) {
+        if (e && e.length > 2) {
             if (position === 1) {
                 this.field2.nativeElement.focus();
             }
