@@ -25,6 +25,7 @@
             <div class="field-input">
                 <div class="container-form">
                     <input [(ngModel)]="LeadModel.Name"
+                            maxlength="50"
                             name="Name"
                             class="form-input"
                             type="text"
@@ -71,8 +72,10 @@
             <div class="field-input">
                 <div class="container-form">
                     <input [(ngModel)]="LeadModel.MaxBudget"
+                            type="text"
+                            onkeypress='return event.charCode >= 48 && event.charCode <= 57'
+                            maxlength="10"
                             class="form-input"
-                            type="number"
                             name="MaxBudget"
                             placeholder="Maximum Budget"
                             matInput />
@@ -90,7 +93,9 @@
                 <div class="container-form">
                     <input [(ngModel)]="LeadModel.MaxBedrooms"
                             class="form-input"
-                            type="number"
+                            type="text"
+                            onkeypress='return event.charCode >= 48 && event.charCode <= 57'
+                            maxlength="4"
                             name="MaxBedrooms"
                             placeholder="Maximum Bedrooms" 
                             matInput />
