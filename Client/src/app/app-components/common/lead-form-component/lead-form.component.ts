@@ -76,7 +76,7 @@ export class LeadFormComponent implements OnInit {
         const isValid: boolean = this.LeadModel.Neighborhoods !== undefined &&
             this.LeadModel.Neighborhoods.length &&
             this.LeadModel.MoveInDate !== undefined  &&
-            this.LeadModel.Name !== undefined &&
+            this.LeadModel.Name !== undefined && this.LeadModel.Name !== '' &&
             this.LeadModel.MaxBudget !== undefined &&
             this.LeadModel.MaxBedrooms !== undefined ;
         return isValid;

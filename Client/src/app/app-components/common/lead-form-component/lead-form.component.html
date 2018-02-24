@@ -3,7 +3,7 @@
         <!-- status -->
         <div>
             <div class="client-name-text-seek">
-                <p class="field-label">Lead Status</p>
+                <p class="field-label logo-align"><i class="material-icons padding-right-5px">check_circle</i>Lead Status</p>
             </div>
             <div class="field-input">
                 <label class="checkbox-container checkbox-array-container"> Is this lead currently looking?
@@ -20,7 +20,7 @@
         <!-- name -->
         <div *ngIf="!SearchMode">
             <div>
-                <p class="field-label">Client Name</p>
+                <p class="field-label logo-align"><i class="material-icons padding-right-5px">account_circle</i> Lead Name</p>
             </div>
             <div class="field-input">
                 <div class="container-form">
@@ -39,7 +39,7 @@
         <!-- phone number -->
         <div *ngIf="!SearchMode">
             <div>
-                <p class="field-label">Phone</p>
+                <p class="field-label logo-align"><i class="material-icons padding-right-5px">phone</i> Phone</p>
             </div>
             <pm-phone-form [PhoneNumber]="LeadModel.Phone"></pm-phone-form>
         </div>
@@ -48,7 +48,7 @@
         <!-- move-in date -->
         <div>
             <div>
-                <p class="field-label">Move in date</p>
+                <p class="field-label logo-align">Move in date</p>
             </div>
             <div class="field-input">
                 <div class="container-form" style="display:flex">
@@ -67,7 +67,7 @@
         <!-- budget -->
         <div>
             <div>
-                <p class="field-label">Max-Budget</p>
+                <p class="field-label logo-align"><i class="material-icons padding-right-5px">attach_money</i> Max-Budget</p>
             </div>
             <div class="field-input">
                 <div class="container-form">
@@ -87,7 +87,7 @@
         <!-- max bedrooms -->
         <div>
             <div>
-                <p class="field-label">Max-Bedroom</p>
+                <p class="field-label logo-align"><i class="material-icons padding-right-5px">hotel</i> Max-Bedroom</p>
             </div>
             <div class="field-input">
                 <div class="container-form">
@@ -106,7 +106,7 @@
     
         <!-- neighborhood checkboxes -->
         <div>
-            <p class="field-label">Select Neighborhoods</p>
+            <p class="field-label logo-align"><i class="material-icons padding-right-5px">room</i> Select Neighborhoods</p>
         </div>
         <div class="field-input">
             <div class="checkbox-array-container">
@@ -128,7 +128,7 @@
     
         <div *ngIf="!SearchMode">
             <div class="short-green-line-hoods"></div>
-            <p class="field-label"> Notes on lead</p>
+            <p class="field-label logo-align"><i class="material-icons padding-right-5px">note_add</i> Notes on lead</p>
             <div class="input-form-field-wrapper">
                 <textarea class="form-input" rows="5" cols="50" name="Notes" [(ngModel)]="LeadModel.Notes" placeholder="Your notes about this lead here..."></textarea>
             </div>

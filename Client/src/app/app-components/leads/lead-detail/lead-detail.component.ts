@@ -20,7 +20,6 @@ export class LeadDetailComponent implements OnInit {
     public Lead: LeadModel;
     public IsEditable: boolean;
     public KeyId: string;
-    // public Neighborhoods = Neighborhoods;
     public Neighborhoods = this._appSettings.constants.Neighborhoods;
     public RequestInProgress = false;
     public NeighborhoodsCheckboxObject: { [key: string]: boolean } = {};

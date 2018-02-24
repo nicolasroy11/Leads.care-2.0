@@ -6,7 +6,7 @@
   "scripts": {
     "start-local-mongo": "sudo ~/mongodb/bin/mongod --fork --logpath /usr/local/var/log/mongodb/mongo.log",
     "stop-local-mongo": "sudo ~/mongodb/bin/mongo localhost/admin --eval 'db.shutdownServer()'",
-    "dev-start": "npm run start-local-mongo && node_modules/typescript/bin/tsc -p . && nodemon --inspect=12345 Main.js",
+    "dev-start": "npm run stop-local-mongo && npm run start-local-mongo && node_modules/typescript/bin/tsc -p . && nodemon --inspect=12345 Main.js",
     "tsc": "node_modules/typescript/bin/tsc -p .",
     "copy-shared": "mkdir Shared && cp -r ../Shared/* ./Shared",
     "delete-shared": "rm -r ./Shared",

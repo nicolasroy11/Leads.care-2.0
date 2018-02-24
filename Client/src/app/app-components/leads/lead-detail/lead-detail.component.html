@@ -4,12 +4,12 @@
         <p class="sub-header-text">{{Title}}</p>
     </div>
     <div class="save-changes-button-container">
-        <button [routerLink]="['/leads']" [disabled]="!LeadForm.IsValid()" mat-button mat-raised-button class="btn">Back to Search</button>
-        <button [disabled]="!LeadForm.IsValid()" mat-button mat-raised-button class="btn" (click)="SaveLead()">Save</button>
+        <button [routerLink]="['/leads']" mat-button mat-raised-button class="btn"><i class="material-icons">keyboard_arrow_left</i> To Search Page</button>
+        <button [disabled]="!LeadForm.IsValid()" mat-button mat-raised-button class="btn" (click)="SaveLead()"><i class="material-icons">save</i> Save</button>
     </div>
     <pm-lead-form (SearchCriteriaChange)="SearchCriteriaChange()" [SearchMode]="false"></pm-lead-form>
     <div class="save-changes-button-container">
-        <button [routerLink]="['/leads']" [disabled]="!LeadForm.IsValid()" mat-button mat-raised-button class="btn">Back to Search</button>
-        <button [disabled]="!LeadForm.IsValid()" mat-button mat-raised-button class="btn" (click)="SaveLead()">Save</button>
+        <button [routerLink]="['/leads']" mat-button mat-raised-button class="btn"><i class="material-icons">keyboard_arrow_left</i> To Search Page</button>
+        <button [disabled]="!LeadForm.IsValid()" mat-button mat-raised-button class="btn" (click)="SaveLead()"><i class="material-icons">save</i> Save</button>
     </div>
 </div>
