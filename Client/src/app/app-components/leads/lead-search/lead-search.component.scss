@@ -36,3 +36,15 @@
 .margin-bottom {
     margin-bottom: 70px;
 }
+
+::ng-deep snack-bar-container.custom-class {
+    background: #000;
+}
+  
+::ng-deep .custom-class .mat-simple-snackbar {
+    color: #9FEDD7;
+}
+
+::ng-deep .custom-class .mat-simple-snackbar-action {
+    color: white;
+}

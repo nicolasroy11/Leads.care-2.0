@@ -16,7 +16,8 @@ import { LeadFormComponent } from '../../common/lead-form-component/lead-form.co
 import {
     MatSnackBarRef,
     MatSnackBar,
-    MatExpansionPanel
+    MatExpansionPanel,
+    MatSnackBarConfig
 } from '@angular/material';
 
 @Component({
@@ -90,7 +91,9 @@ export class LeadSearchComponent implements OnInit, OnDestroy, AfterViewInit {
                 SearchDataRegistry.Instance.RegisterSearchCriteria(this.LeadForm.LeadModel);
                 const isFormDirty = this.LeadForm.IsDirty();
                 if (isFormDirty) {
-                    this.snackBarRef = this.snackBar.open('Clear all filters?', 'yes');
+                    const config = new MatSnackBarConfig();
+                    config.extraClasses = ['custom-class'];
+                    this.snackBarRef = this.snackBar.open('Clear all filters?', 'yes', config);
                     this.snackBarRef.onAction().subscribe(() => {
                         this.LeadForm.ClearAll();
                     });
