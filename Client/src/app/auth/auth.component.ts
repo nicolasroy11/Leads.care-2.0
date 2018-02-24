@@ -10,7 +10,8 @@ import { UserResponseModel } from '../../../../Shared/Models/UserResponseModel';
 @Component({
     moduleId: module.id,
     selector: 'pm-auth-component',
-    templateUrl: 'auth.component.html'
+    templateUrl: 'auth.component.html',
+    styleUrls: ['auth.component.scss']
 })
 export class AuthComponent implements OnInit {
     public AuthForm: FormGroup;

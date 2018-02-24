@@ -33,13 +33,13 @@
             </div>
         </div>
 
-        <div class="save-changes-button-container">
+        <div class="buttons-container">
             <button *ngIf="!IsNewUser" [disabled]="!AuthForm.valid" (click)="Login()" class="btn" mat-button mat-raised-button>Log In</button>
         </div>
-        <div class="save-changes-button-container">
+        <div class="buttons-container">
             <button *ngIf="IsNewUser" [disabled]="!AuthForm.valid" (click)="SignUp()" class="btn" mat-button>Sign Up</button>
         </div>
-        <div class="save-changes-button-container">
+        <div class="buttons-container">
             <br/>
             <div>OR</div>
             <br/>
