@@ -176,7 +176,7 @@ export class LeadRepository implements ILeadRepository {
             searchFilterObject.MaxBudget = { $eq: searchCriteria.MaxBudget };
         }
         if (searchCriteria.MaxBedrooms) {
-            searchFilterObject.MaxBedrooms = { $gte: searchCriteria.MaxBedrooms };
+            searchFilterObject.MaxBedrooms = { $eq: searchCriteria.MaxBedrooms };
         }
 
         return searchFilterObject;

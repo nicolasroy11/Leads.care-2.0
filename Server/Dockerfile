@@ -12,12 +12,14 @@ COPY . /usr/src/app
 COPY Shared /usr/src/Shared
 
 # Install dependencies
-# RUN npm install -g pm2
+RUN npm install -g pm2
 RUN npm install
 RUN npm run tsc
 
 # Expose the port the app runs in
 EXPOSE 3000
 
+ENV NODE_ENV production
+
 # Serve the app
-CMD ["node", "Main.js"]
+CMD ["pm2-docker", "Main.js"]
