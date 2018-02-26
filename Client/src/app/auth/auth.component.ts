@@ -15,7 +15,7 @@ import { UserResponseModel } from '../../../../Shared/Models/UserResponseModel';
 })
 export class AuthComponent implements OnInit {
     public AuthForm: FormGroup;
-    public IsNewUser = true;
+    public IsNewUser = false;
     public Title: string;
     public User: UserBaseRequestModel = new UserBaseRequestModel();
     public StatusTypes = StatusTypes;
