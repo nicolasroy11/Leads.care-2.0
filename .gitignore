@@ -2,7 +2,8 @@
 node_modules
 **.js
 **.js.map
-!Client/Main.js
+Client/dist
+.npmrc
 
 # Server
 node_modules
@@ -11,7 +12,7 @@ Server/appSettings.json
 Server/.npmrc
 
 # Client
-Client/dist
+!Client/Main.js
 Client/scripts
 Client/tmp
 Client/out-tsc
