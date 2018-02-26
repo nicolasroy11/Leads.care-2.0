@@ -15,7 +15,7 @@ export class Database {
         }
         (<any>mongoose).Promise = Promise;
         let connect = new Promise<any>((resolve, reject) => {
-            mongoose.connect(Database.ConnectionString).catch(err => {
+            mongoose.connect(Database.ConnectionString, {useMongoClient: true, promiseLibrary: global.Promise}).catch(err => {
                 console.log('database connection failed');
             });
 
