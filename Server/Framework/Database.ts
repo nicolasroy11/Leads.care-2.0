@@ -2,12 +2,6 @@ import * as mongoose from 'mongoose';
 import { AppSettings } from '../Settings/AppSettings';
 
 export class Database {
-    // MongoDB URL from the docker-compose file
-    // private static ConnectionString: string = 'mongodb://mongodb/leadem';
-
-    // local dev db connection
-    // private static ConnectionString: string = 'mongodb://127.0.0.1/leadem';
-
     private static ConnectionString: string;
     public DatabaseConnection: mongoose.Connection;
 
